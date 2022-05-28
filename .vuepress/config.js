@@ -87,6 +87,7 @@ module.exports = {
             }
         ],
         "logo": "/logo.png",
+        subSidebar: 'auto', //在所有页面中启用自动生成子侧边栏，原 sidebar 仍然兼容
         "search": true,
         "searchMaxSuggestions": 10,
         "lastUpdated": "Last Updated",
