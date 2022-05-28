@@ -1,76 +1,47 @@
 <template>
-  <section class="theme-container" v-if="!noFoundPageByTencent">
-    <article class="content">
-      <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
-    </article>
-  </section>
+  <div class="not-find-container">
+    <img src="/404.jfif" alt="404" class="not-find-img" />
+    <div class="not-find-btn">
+       <router-link to="/">返回首页</router-link>
+    </div>
+  </div>
 </template>
 
 <script>
-import { defineComponent, computed, onMounted } from 'vue-demi'
-import { useInstance } from '@theme/helpers/composable'
-
-const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-]
-
-export default defineComponent({
-  setup (props, ctx) {
-    const instance = useInstance()
-
-    const noFoundPageByTencent = computed(() => {
-      return instance.$themeConfig.noFoundPageByTencent !== false
-    })
-
-    const getMsg = () => {
-      return msgs[Math.floor(Math.random() * msgs.length)]
-    }
-
-    onMounted(() => {
-      if (noFoundPageByTencent.value) {
-        const dom = document.createElement('script')
-        dom.setAttribute('homePageName', '回到首页')
-        dom.setAttribute('homePageUrl', instance.$site.base)
-        dom.setAttribute('src', '//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js')
-
-        document.body.append(dom)
-      }
-    })
-
-    return { noFoundPageByTencent, getMsg }
-  }
-})
+export default {
+  mounted() {},
+};
 </script>
 
-<style src="../styles/theme.styl" lang="stylus"></style>
+<style>
+.not-find-container {
+  width: 100%;
+  height: 90vh;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.not-find-img {
+  width: 350px;
+  height: 380px;
+}
 
-<style lang="stylus">
-.content
-  margin 4rem auto 0
-  max-width 800px
-  padding 0 2rem
-.mod_404
-  .desc
-    .desc_link
-      display: inline-block
-      // margin: 20px 0
-      background: #424242!important
-      color: #ffffff
-      padding: 6px 20px!important
-      text-decoration: none!important
-      border-radius: 4px
+.not-find-btn{
+   margin-top: 50px;
+   width: 180px;
+   height: 40px;
+   border: 1px solid #2B9ACA;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 5px;
+   cursor:pointer;
+}
 
-@media screen and (max-width: 720px)
-  .mod_404
-    .desc
-      margin: 50px 0
-    .wrapper
-      margin 0!important
-      padding-top 20px
+a{
+  text-decoration: none;
+}
+
 </style>
-

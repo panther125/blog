@@ -159,7 +159,7 @@ export default defineComponent({
       const initBgImageStyle = {
         textAlign: 'center',
         overflow: 'hidden',
-        background: `url(https://www.zpzpup.com/assets/image/bj03.jpg) 0% 0% / 100% no-repeat`,
+        background: `url(https://www.zpzpup.com/assets/image/bj02.jpg) 0% 0% / 100% no-repeat`,
       }
 
       const { bgImageStyle } = instance.$frontmatter

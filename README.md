@@ -1,22 +1,22 @@
 ---
 home: true
-heroText: vuepress-theme-reco
-tagline: A simple and beautiful vuepress blog theme.
+heroText: Gin琴酒的读书笔记
+tagline: 黄沙百战穿金甲，不破楼兰终不还。
 heroImageStyle: {
   maxWidth: '600px',
   width: '100%',
+  height: '100%',
   display: block,
   margin: '9rem auto 2rem',
   background: '#fff',
   borderRadius: '1rem',
 }
-bgImage: https://tva4.sinaimg.cn/large/006ZeQBKly8gwttia815qj31hc0u0tgr.jpg
 bgImageStyle: {
-  height: '100vh'
+  height: '100vh',
+  width: '100wh'
 }
 isShowTitleInHome: false
-actionText: Guide
-actionLink: /views/other/guide
+actionText: panther
 features:
 - title: Yesterday
   details: 开发一款看着开心、写着顺手的 vuepress 博客主题
