@@ -52,7 +52,7 @@ cafe babe 0000 003c 001d 0a00 0200 0307
 ```
 * 文件开头的4个字节`cafe babe`称之为 魔数，唯有以`cafe babe`开头的class文件方可被虚拟机所接受，这4个字节就是字节码文件的身份识别。 0000是编译器jdk版本的次版本号0，003c转化为十进制是60,是主版本号，
 # 反编译字节码文件
-:::info
+:::tip
 使用到java内置的一个反编译工具javap可以反编译字节码文件, 用法: javap <options> <classes>
 :::
 ```java
@@ -74,7 +74,7 @@ cafe babe 0000 003c 001d 0a00 0200 0307
   -cp <path>               指定查找用户类文件的位置
   -bootclasspath <path>    覆盖引导类文件的位置
 ```
-:::info
+:::tip
 javap -verbose -p Main.class
 :::
 ```java

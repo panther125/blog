@@ -33,7 +33,7 @@ tags:
 * lambda编译时不会产生独立的字节码文件，对应的字节码文件在运行时动态生成
 :::
 ## 方法引用符
-:::info no-icon
+:::tip
 * 类名引用静态方法
 :::
 ```java
@@ -65,7 +65,7 @@ public class example{
 }
 
 ```
-:::info no-icon
+:::tip
 * 对象名引用方法
 :::
 ```java
@@ -94,7 +94,7 @@ public class example{
     }
 }
 ```
-:::info no-icon
+:::tip
 * 构造器引用
 :::
 ```java
@@ -125,7 +125,7 @@ public class example{
     }
 }
 ```
-:::info no-icon
+:::tip
 * 类名引用普通方法
 :::
 ```java
@@ -183,7 +183,7 @@ public class example{
 }
 ``` 
 **常用的函数式接口**
-:::info no-icon
+:::tip
 * Supplier
 * 可以将Supplier理解为获取一个常量
 :::
@@ -206,7 +206,7 @@ public class example{
         return sup2.get();
     }
 ```
-:::info no-icon
+:::tip
 * Consumer
 * 将Consumer理解为接受一个常量
 :::
@@ -228,7 +228,7 @@ public class example{
         con1.andThen(con2).accept(name);
     }
 ```
-:::info no-icon
+:::tip
 * Predicate
 * 将Predicate理解为字符串的操作的判断
 :::
@@ -261,7 +261,7 @@ public class example{
         return pre1.or(pre2).test(text);
     }
 ```
-:::info no-icon
+:::tip
 * Function
 * 将Predicate理解为字符串的操作的判断
 :::
@@ -307,14 +307,14 @@ public static void main(String[] args) {
         Stream strArrStream = Stream.of(strArr);
 ```
 ## stream常见方法
-:::info no-icon
+:::tip
 * filter可以想象成判段然后过滤,判断字符串是否以张开头，长度是否等于3
 :::
 ```java
 list.stream().filter(s->s.startsWith("张")).filter(s->s.length()==3).
      forEach(System.out::println);
 ```
-:::info no-icon
+:::tip
 * limit限制元素个数
 * skip跳过元素个数
 * concat合并两个流

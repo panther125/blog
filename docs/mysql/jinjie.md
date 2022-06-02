@@ -56,7 +56,7 @@ CREATE TABLE major(
 
 );
 ```
-:::top no-icon
+:::tip no-icon
  一般使用表级约束写外键，其他的都可以写成列级约束
 :::
 **修改约束和添加约束**
@@ -126,7 +126,7 @@ SHOW ENGINES;
  */
 ```
 
-:::top no-icon
+:::tip
 **InnoDB** 
 :::
 * 是 MySQL 默认的事务型存储引擎，只有在需要它不支持的特性时，才考虑使用其它存储引擎。 
@@ -136,7 +136,7 @@ SHOW ENGINES;
 因此对查询性能有很大的提升。 内部做了很多优化，包括从磁盘读取数据时采用的可预测性读、能够加快读操作
 并且自动创建的自适应哈希索引、能够加速插入操作的插入缓冲区等。 支持真正的在线热备份。
 其它存储引擎不支持在线热备份，要获取一致性视图需要停止对所有表的写入，而在读写混合场景中，停止写入可能也意味着停止读取。
-:::top no-icon
+:::tip
 **MyISAM** 
 :::
 * 设计简单，数据以紧密格式存储。对于只读数据，或者表比较小、可以容忍修复操作，则依然可以使用它。
@@ -291,7 +291,7 @@ SELECT @用户变量名:=值;
 * 局部变量的声明只能在begin end的第一句
 :::
 # 存储过程和函数
-[类似java的方法]{.label .top}
+**类似java的方法**
 1. 提高代码重用性
 2. 简化操作
 3. 减少了编译次数并减少了与服务器连接的次数，提高了效率
@@ -315,7 +315,7 @@ inout   该参数可以作为输入和输出，也就是该参数既需要输入
 call 存储名(参数);
 ```
 ## 创建存储过程的案例
-:::top no-icon
+:::tip
 * 无参存储过程
 :::
 ```sql
@@ -329,7 +329,7 @@ end //;
 
 call sum();  -- 调用函数
 ```
-:::top no-icon
+:::tip
 * 带in的存储过程
 :::
 ```sql
@@ -348,7 +348,7 @@ BEGIN
 
 end //
 ```
-:::top no-icon
+:::tip
 * 带out的存储过程
 :::
 ```sql
@@ -366,7 +366,7 @@ end //
 
 call myprocedure4('小昭',@resultname);
 ```
-:::top no-icon
+:::tip
 * 带inout的存储过程
 :::
 ```sql
@@ -388,18 +388,18 @@ select @m,@n;
 DROP PROCEDURE 存储名;
 ```
 ## 函数
-[**创建函数**]{.label .top}
+**创建函数**
 ```sql
 CREATE FUNCTION 函数名() RETURNS 返回类型
 BEGIN
         函数体
 END
 ```
-[**调用函数**]{.label .top}
+**调用函数**
 ```sql
 select 函数名()
 ```
-[**函数案列**]{.label .top}
+**函数案列**
 ```sql
 # 返回beauty表的字段个数
 SET global log_bin_trust_function_creators=true; -- 如果出现1418错误可以设置这个
@@ -415,11 +415,11 @@ end //
 
 select myfunction1();
 ```
-[**查看函数**]{.label .top}
+**查看函数**
 ```sql
 SHOW CREATE FUNCTION 函数名
 ```
-[**删除函数**]{.label .top}
+**删除函数**
 ```sql
 DROP FUNCTION 函数名
 ```

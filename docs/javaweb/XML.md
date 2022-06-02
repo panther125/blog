@@ -84,11 +84,11 @@ Tomcat 默认的端口号是：8080
                redirectPort="8443" />
 ```
 ## 部署
-:::info no-ion
+:::tip
 第一种部署方法
 :::
 只需要把 web 工程的目录拷贝到 Tomcat 的 webapps 目录下 即可
-:::info no-ion
+:::tip
 第2种部署方法
 :::
 找到 Tomcat 下的 conf 目录\Catalina\localhost\ 下,创建如下的配置文件

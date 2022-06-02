@@ -74,16 +74,16 @@ module.exports = {
             }
         },
         "friendLink": [{
-                "title": "午后南杂",
-                "desc": "Enjoy when you can, and endure when you must.",
-                "email": "1156743527@qq.com",
-                "link": "https://www.recoluan.com"
+                "title": "博客园",
+                "desc": "自立自强，无问西东",
+                "email": "2392189963@qq.com",
+                "link": "https://www.panther9985.cnblogs.com"
             },
             {
-                "title": "vuepress-theme-reco",
-                "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-                "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-                "link": "https://vuepress-theme-reco.recoluan.com"
+                "title": "导航",
+                "desc": "常用链接",
+                "email": "2392189963@qq.com",
+                "link": "https://panther9985.iuo.ink"
             }
         ],
         "logo": "/logo.png",

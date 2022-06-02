@@ -135,7 +135,7 @@ synchronized(对象){
         t2.start();
 ```
 # 线程池
-:::info
+:::tip
 * 创建线程池的主要步骤
 1. 创建一个实现Runnable或Callable接口的实现类，重现run或者call方法
 2. 创建Runnable或Callable接口的实现类

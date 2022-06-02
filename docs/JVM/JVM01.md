@@ -8,7 +8,7 @@ tags:
 ---
 # JVM
 			Java Virtual Machine  java虚拟机
-[好处]{.label .info}：
+**好处**
   * 一次编写，到处运行
   * 自动内存管理，垃圾回收
   * 数组下标越界检查

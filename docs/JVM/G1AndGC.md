@@ -20,7 +20,7 @@ G1将整个Java堆（包括新生代、老年代）划分为多个大小固定�
 -XX:MaxGCPauseMillis=time
 ```
 # GC调优
-:::info
+:::tip
 * 查看虚拟机参数
 :::
 ```bash
@@ -67,7 +67,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 16.0.2+7-67, mixed mode, sharing)
      bool UseZGC                                   = false                                     {product} {default}
 ```
 ## 调优对象
-:::info
+:::tip
 * 内存
 * 锁竞争
 * cpu占用

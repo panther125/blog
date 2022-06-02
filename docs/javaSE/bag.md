@@ -72,7 +72,7 @@ System.out.println(i3 == i4);
 System.out.println(i3.equals(i4));
 ```
 输出结果为：
-+++info
++++tip
 true
 true
 -----------

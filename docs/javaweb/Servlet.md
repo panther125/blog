@@ -15,7 +15,7 @@ sticky:
 3. Servlet:是运行在服务器上的一个java小程序，
 [它可以接收客户端发送过来的请求，并响应数据给客户端]{.red}。
 ## 实现一个Servlet程序
-:::info
+:::tip
 web.xml配置
 :::
 ```xml
@@ -74,16 +74,16 @@ web.xml配置
 ![](https://pic.imgdb.cn/item/6283255f0947543129028cfa.png)
 
 ## Servlet生命周期
-:::info
+:::tip
 1、执行Servlet构造器方法
 2、执行init初始化方法
 :::
 * 第一、二步，是在第一次访问的时候创建Servlet程序会调用。
-:::info
+:::tip
 3、执行service方法
 :::
 * 第三步，每次访问都会调用service方法
-:::info
+:::tip
 4、执行destroy销毁方法
 :::
 第四步，在web工程停止的时候调用。
@@ -235,3 +235,34 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
         //method = GET
     }
 ```
+# 为什么Http是无状态的
+:::tip
+无状态
+:::
+1. 服务器无法判断客户端的多起请求是否是同一个客户端发过来的。
+:::warning
+导致的问题
+:::
+* 例如
+1. 第一次请求是将商品加入购物车
+2. 第二次请求是结账
+* 如果服务器不能判断同一个客户端，结账就会出错导致混乱
+:::tip
+解决
+:::
+通过会话跟踪技术解决无状态问题
+```java
+public class demo2Session extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        System.out.println("session id = "+session.getId());
+    }
+}
+```
+1. 如果是第一次请求，服务器会给客户端分配一个Session然后响应给客户段
+2. 第二次请求时，客户端会将SessionID带给服务器，服务器判断是否是同一个客户端
+:::tip
+常用API
+:::

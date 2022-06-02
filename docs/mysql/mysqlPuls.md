@@ -101,7 +101,7 @@ CREATE TRIGGER 触发器名称
 FOR EACH ROW
 执行的语句块;
 ```
-:::top
+:::tip
 监听插入
 :::
 ```sql
@@ -154,7 +154,7 @@ delimiter ;
 insert into employees(employee_id, last_name,salary,manager_id) values(207,'john',12000,103);
 ```
 ## 查看和三处触发器
-:::top
+:::tip
 * 查看触发器
 :::
 ```sql
@@ -165,7 +165,7 @@ show create trigger chack_salary;
 #方式3
 select * from toprmation_schema.TRIGGERS;
 ``` 
-:::top
+:::tip
 * 删除触发器
 :::
 ```sql
@@ -202,16 +202,16 @@ MyISAM 支持表锁，InnoDB 支持行锁
 - 每个表保存一个实体信息
 - 每个具有一个ID字段作为主键
 - ID主键 + 原子表
-:::top
+:::tip
 1NF, 第一范式
 :::
 字段不能再分，就满足第一范式。
-:::top
+:::tip
 2NF, 第二范式
 :::
 满足第一范式的前提下，不能出现部分依赖。
 消除复合主键就可以避免部分依赖。增加单列关键字。
-:::top
+:::tip
 3NF, 第三范式
 :::
 满足第二范式的前提下，不能出现传递依赖。

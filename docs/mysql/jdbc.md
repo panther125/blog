@@ -121,20 +121,20 @@ private static void JDBCBatch() throws ClassNotFoundException, SQLException {
 [数据库连接池负责分配、管理和释放数据库连接]{.blue}，它允许应用程序
 [重复使用一个现有的数据库连接，而不是重新建立一个]{.blue}。连接池的最大数据库连接数量限定了这个连接池能点有的最大连接数，当应用程序向连接池请求的连接数超过最大连接数量时，这些请求将被加入到等待队列中。
 ![](https://static01.imgkr.com/temp/e39dedccbd564670adac21ef57d697b4.png)
-:::top
+:::tip
 数据库连接池技术的优点
 :::
-* [资源重用]{.label .top}：
+* **资源重用**：
 由于数据库连接得以重用，避免了频繁创建，释放连接引起的大量性能开销。在减少系统消耗的基础上，另一方面也增加了系统运行环境的平稳性。
-* [更快的系统反应速度]{.label .top}
+* **更快的系统反应速度**
 数据连接池在初始化过程中，往往已经创建了若干数据库连接置于连接池中备用。此时连接的初始化工作均已完成。对于业务请求处理而言，直接利用现有可用连接，避免了数据库连接初始化和释放过程的时间开销，从而减少了系统的响应时间
-* [新的资源分配手段]{.label .top}
+* **新的资源分配手段**
 对于多应用共享同一数据库的系统而言，可在应用层通过数据库连接池的配置，实现某一应用最大可用数据库连接数的限制，避免某一应用独占所有的数据库资源
-* [统一的连接管理，避免数据库连接泄露]{.label .top}
+* **统一的连接管理，避免数据库连接泄露**
 在较为完善的数据库连接池实现中，可根据预先的占用超时设定，强制回收被占用连接，从而避免了常规数据库连接操作中可能出现的资源泄露
 ## Druid
  Druid是阿里巴巴开源平台上一个数据库连接池实现，它结合了C3P0、DBCP、Proxool等DB池的优点，同时加入了日志监控，可以很好的监控DB池连接和SQL的执行情况，可以说是针对监控而生的DB连接池，据说是目前最好的连接池。
-:::top
+:::tip
 基本配置
 :::
 ```java
@@ -158,7 +158,7 @@ private static void JDBCBatch() throws ClassNotFoundException, SQLException {
 
 10.removeAbandoned  ：超过removeAbandonedTimeout时间后，是否进行没用连接的回收(默认为false，调整为true)
 ```
-:::top
+:::tip
 * 使用方式一
 :::
 由于有许多繁琐的调用导致对书写不友好接下来还会提供第二种方法
@@ -194,7 +194,7 @@ DruidDataSource ds = new DruidDataSource();
         Connection conn = ds.getConnection();
         System.out.println(conn);
 ```
-:::top
+:::tip
 * 使用方式二
 :::
 * 通过配置文件可以省去大量的调用

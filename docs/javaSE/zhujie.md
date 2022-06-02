@@ -30,12 +30,12 @@ public @interface Override {
 public @interface FunctionalInterface {}
 
 ```
-:::info
+:::tip
 `@Target`
 :::
 判断注解使用的区域
 1. ElementType.METHOD:只能在方法使用
-:::info
+:::tip
 `@Retention`
 :::
 1. RetentionPolicy.RUNTIME：在运行时期触发
@@ -104,27 +104,27 @@ public enum RetentionPolicy {
 Java 定义了一套注解,共有`10`个,6个在 `java.lang`中，剩下4个在java.lang.annotation 中。
 
 * 作用在代码的注解是
-:::info
+:::tip
 `@Override` 
 :::
 检查该方法是否是重写方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。
-:::info
+:::tip
 `@Deprecated` 
 :::
 标记过时方法。如果使用该方法，会报编译警告。
-:::info
+:::tip
 `@SuppressWarnings` 
 :::
 指示编译器去忽略注解中声明的警告。
-:::info
+:::tip
 `@SafeVarargs` 
 :::
 忽略任何使用参数为泛型变量的方法或构造函数调用产生的警告。
-:::info
+:::tip
 `@FunctionalInterface` 
 :::
 标识一个匿名函数或函数式接口
-:::info
+:::tip
 `@Repeatable` 
 :::
 标识某注解可以在同一个声明上使用多次。
