@@ -1,6 +1,6 @@
 ---
 title: SQL基础查询
-date: 2022-05-29
+date: 2022-05-20
 categories:
 - 数据库
 tags:

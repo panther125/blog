@@ -77,7 +77,7 @@ module.exports = {
                 "title": "博客园",
                 "desc": "自立自强，无问西东",
                 "email": "2392189963@qq.com",
-                "link": "https://www.panther9985.cnblogs.com"
+                "link": "https://www.cnblogs.com/panther9985/"
             },
             {
                 "title": "导航",

@@ -266,3 +266,45 @@ public class demo2Session extends HttpServlet {
 :::tip
 常用API
 :::
+```java
+request.getSession();       -- 获取当前会话，没有则创建一个
+request.getSession(true);   -- 效果与不带参数相同
+request.getSession(false);  -- 获取当前会话没有则返回null不会创建新的会话
+
+request.getSession.getId();  -- 获取当前SessionId
+request.getSession.isNew();  -- 判断当前session是否是新创建的
+request.getSession.getMaxInactiveInterval();  --session的非激活间接时间默认半个小时
+request.getSession.setMaxInactiveInterval();  -- 设置时间
+request.getSession.invalidate();  -- 强制让会话立即失效
+.........学会查文档不要背，谁背谁傻X
+```
+# 通过反射省略冗余的else if
+```java
+    public void login(){
+        System.out.println("login method");
+    }
+    public void register(){
+        System.out.println("register method");
+    }
+    public void updatePassword(){
+        System.out.println("updatePAssword method");
+    }
+    public void updateEmail(){
+        System.out.println("updateEmail method");
+    }
+
+    public static void main(String[] args) {
+        String action = "register";
+
+        try {
+            //反射获取成员方法
+             Method declaredMethod = reflexServletTest.class.getDeclaredMethod(action);
+
+            //调用成员方法
+            declaredMethod.invoke(new reflexServletTest());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+```

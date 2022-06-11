@@ -1,12 +1,10 @@
 ---
 title: XML
-date: 2022-05-29
+date: 2022-05-20
 categories:
  - 后端
 tags:
  - JAVAWEB
-sticky: 
-   true
 ---
 # XML格式
 ```xml
