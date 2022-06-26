@@ -308,3 +308,54 @@ request.getSession.invalidate();  -- 强制让会话立即失效
         
     }
 ```
+## 服务器内部转发与客户重定向
+:::tip
+服务器内部转发
+:::
+```java
+public class clientJump extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("请求1");
+        //服务器内部转发，客户端不知道.url没有变化
+        req.getRequestDispatcher("jumpTwo").forward(req,resp);
+    }
+}
+
+public class clientJump2 extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("请求2");
+    }
+}
+```
+:::tip
+客户重定向
+:::
+```java
+public class clientJump extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("请求1");
+        //客户端重定向,地址栏有变化
+        resp.sendRedirect("jumpTwo");
+    }
+}
+
+public class clientJump2 extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("请求2");
+    }
+}
+```
+:::warning
+保存域生效范围
+* request 一次请求响应范围
+* session 一次会话范围
+* application 一次应用程序范围  
+:::
